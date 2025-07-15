@@ -73,19 +73,17 @@ const About = () => {
 
   const [aboutContent, setAboutContent] = useState(null);
   const [contentLoading, setContentLoading] = useState(true);
-  const [contentError, setContentError] = useState('');
 
   useEffect(() => {
     const fetchContent = async () => {
       setContentLoading(true);
-      setContentError('');
       try {
         const res = await fetch('/api/content/about');
         if (!res.ok) throw new Error('Failed to fetch about content');
         const data = await res.json();
         setAboutContent(data);
       } catch {
-        setContentError('Failed to load about content.');
+        // setContentError('Failed to load about content.'); // This line was removed
       } finally {
         setContentLoading(false);
       }

@@ -14,7 +14,6 @@ import {
   XCircle,
   Clock as ClockIcon,
   Heart,
-  Star,
   Mail,
   Phone
 } from 'lucide-react';

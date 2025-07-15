@@ -26,19 +26,17 @@ const Contact = () => {
   const [error, setError] = useState('');
   const [contactContent, setContactContent] = useState(null);
   const [contentLoading, setContentLoading] = useState(true);
-  const [contentError, setContentError] = useState('');
 
   useEffect(() => {
     const fetchContent = async () => {
       setContentLoading(true);
-      setContentError('');
       try {
         const res = await fetch('/api/content/contact');
         if (!res.ok) throw new Error('Failed to fetch contact content');
         const data = await res.json();
         setContactContent(data);
       } catch {
-        setContentError('Failed to load contact content.');
+        // setContentError('Failed to load contact content.'); // This line was removed
       } finally {
         setContentLoading(false);
       }

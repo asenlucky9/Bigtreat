@@ -8,8 +8,6 @@ import {
   Calendar, 
   Award,
   Play,
-  ChevronLeft,
-  ChevronRight,
   MapPin,
   Phone,
   Clock,
@@ -20,12 +18,10 @@ import apiService from '../services/api';
 const Home = () => {
   const [services, setServices] = useState([]);
   const [gallery, setGallery] = useState([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
   const [loading, setLoading] = useState(true);
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const [homeContent, setHomeContent] = useState(null);
   const [contentLoading, setContentLoading] = useState(true);
-  const [contentError, setContentError] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,14 +54,13 @@ const Home = () => {
   useEffect(() => {
     const fetchContent = async () => {
       setContentLoading(true);
-      setContentError('');
       try {
         const res = await fetch('/api/content/home');
         if (!res.ok) throw new Error('Failed to fetch home content');
         const data = await res.json();
         setHomeContent(data);
       } catch {
-        setContentError('Failed to load home content.');
+        // setContentError('Failed to load home content.'); // This line was removed as per the edit hint
       } finally {
         setContentLoading(false);
       }
@@ -100,14 +95,6 @@ const Home = () => {
       avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
     }
   ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
   if (loading || contentLoading) {
     return (
@@ -188,10 +175,10 @@ const Home = () => {
                       <X className="w-6 h-6" />
                     </button>
                     <video
-                      src="https://www.w3schools.com/html/mov_bbb.mp4"
+                      src="/assets/play.mp4"
                       controls
                       autoPlay
-                      className="rounded-b-2xl w-full h-80 object-cover"
+                      className="rounded-b-2xl w-full h-80 object-contain bg-black"
                     >
                       Sorry, your browser does not support embedded videos.
                     </video>
