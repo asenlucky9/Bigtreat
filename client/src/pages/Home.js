@@ -75,27 +75,6 @@ const Home = () => {
     { number: '100%', label: 'Satisfaction Rate', icon: Star }
   ];
 
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'Bride',
-      content: 'Big Treat made our wedding day absolutely magical. Every detail was perfect and the team was incredibly professional.',
-      avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face'
-    },
-    {
-      name: 'Michael Chen',
-      role: 'Event Organizer',
-      content: 'Outstanding service and attention to detail. They transformed our corporate event into an unforgettable experience.',
-      avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face'
-    },
-    {
-      name: 'Aisha Bello',
-      role: 'Cultural Event Host',
-      content: 'Their traditional bead work and hair styling services are exceptional. They truly understand our cultural heritage.',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face'
-    }
-  ];
-
   if (loading || contentLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
