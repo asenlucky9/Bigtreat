@@ -1,0 +1,30 @@
+{
+  "name": "big-treat-unique-centre",
+  "version": "1.0.0",
+  "description": "Professional event planning and beauty services application for Big Treat Unique Centre Nigeria Ltd",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "build": "cd client && npm run build",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "cd server && npm start"
+  },
+  "keywords": [
+    "event-planning",
+    "beauty-services",
+    "wedding-services",
+    "firebase",
+    "react",
+    "nodejs"
+  ],
+  "author": "Big Treat Unique Centre Nigeria Ltd",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "react-quill": "^2.0.0"
+  }
+}
