@@ -1,0 +1,15 @@
+{
+  "short_name": "BigTreat",
+  "name": "Big Treat Unique Centre Nigeria Ltd",
+  "icons": [
+    {
+      "src": "/assets/BigTreatLogo.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#f472b6",
+  "background_color": "#ffffff"
+} 
