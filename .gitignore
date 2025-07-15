@@ -17,6 +17,14 @@ firebase-debug.log
 
 # Production builds
 /client/build
+# Allow required static files in client/public
+client/public/*
+!client/public/favicon.ico
+!client/public/logo192.png
+!client/public/index.html
+!client/public/manifest.json
+!client/public/_redirects
+!client/public/assets/
 /client/dist
 
 # Runtime data
